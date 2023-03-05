@@ -44,7 +44,7 @@ class OverW(QMainWindow, Ui_MainWindow):
         else:
             cur.execute(f"""Delete from main where id = {int(self.id)}""").fetchall()
             con.commit()
-        res = f"""Insert into main VALUES ({int(self.id) + 1}, '{self.le_names.text()}', '{self.le_step.text()}', '{self.le_do.text()}', '{self.le_des.text()}', '{self.le_pri.text()}', '{self.le_vol.text()}')"""
+        res = f"""Insert into main VALUES ({int(self.id) + 1}, '{self.le_names.text()}', {self.le_step.text()}, '{self.le_do.text()}', '{self.le_des.text()}', {self.le_pri.text()}, {self.le_vol.text()})"""
         cur.execute(res)
         con.commit()
         con.close()
